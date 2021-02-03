@@ -4,6 +4,8 @@
 
 //test2
 
+//test3
+
 #include "Header.h"
 
 std::string Edges[4] = Puz3;
