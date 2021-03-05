@@ -45,12 +45,10 @@ int ProcessPuzzle() {
     if (f == 25) return true;
     i = (f / 5) + 1;
     j = (f % 5) + 1;
-//    std::cout << i << ", " << j << "\n";
     
     for (int ii = 'A'; ii <= 'D'; ii++) {
         if (TestEntryLegal(ii, i, j)) {
             Puzzle(i, j) = ii;
-//            std::cout << ii << "\n";
             if (ProcessPuzzle()) return true;;
             Puzzle(i, j) = ' ';
         }
@@ -76,10 +74,10 @@ int TestEntryLegal(int c, int i, int j) {
 
  // Check for multiple As, Bs or Cs in row or column
     for (int ii = 1; ii < 6; ii++)
-        if (Puzzle(i, ii) == c or Puzzle(ii, j) == c) return false;
+        if (Puzzle(i, ii) == c || Puzzle(ii, j) == c) return false;
 
  // Check that there is space for legal letter at end of row and column
-    if ((c == Puzzle(i, 6) && j < 3) or (c == Puzzle(6, j) && i < 3)) return false;
+    if ((c == Puzzle(i, 6) && j < 3) || (c == Puzzle(6, j) && i < 3)) return false;
 
 // Check Row
     if (c != Puzzle(i, 0) && Puzzle(i,0) != '-') {  // Check not an illegal first letter in row
