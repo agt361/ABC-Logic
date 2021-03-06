@@ -98,7 +98,6 @@ int TestEntryLegal(int c, int i, int j) {
         if (t < j) return false;
     }
 
-
 //Check Column
     if (c != Puzzle(0,j) && Puzzle(0, j) != '-') {
         for (t = 1; t < i; t++)
